@@ -15,8 +15,8 @@ for(aa in 1:(DIM[1]-14)){ #NB: measuring from back to front!
 CaseDiff=rev(CaseDiff) #reverse case difference object so timing is right
 
 DATES = as.Date(Cty$date[15:DIM[1]])
-percapitaInfectious1 = 3*CaseDiff/CountyPopulation
-percapitaInfectious2 = 5*CaseDiff/CountyPopulation
+percapitaInfectious1 = 3*CaseDiff*(10/14)/CountyPopulation #per capita infectious using ascertainment bias of 3 and 10-day average cases over 14 days
+percapitaInfectious2 = 5*CaseDiff*(10/14)/CountyPopulation #per capita infectious using ascertainment bias of 5 and 10-day average cases over 14 days
 
 #set x-limits
 XLIM=c(as.Date("2020-08-01"),as.Date("2021-05-01"))
